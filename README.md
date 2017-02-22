@@ -5,7 +5,7 @@ Since it is not a Maven project you have to add the external dependencies manual
 There are 2 external libraries that I am using for this project.
 
 The libraries are -
-1) Google Guice
+1) Google Guice <br>
 2) Google Guava
 
 Following are the jars -
