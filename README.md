@@ -13,8 +13,12 @@ lib/guice-4.0.jar <br>
 lib/guava-20.0.jar <br>
 lib/javax.inject-1.jar <br>
 lib/aopalliance-1.0.jar <br>
+lib/guice-assistedinject-4.0.jar <br>
 
 
 All these jars are accessible at one place in this directory - <br>
 https://drive.google.com/drive/folders/0B9pxrYvj3i2UMU04aVY0ZkNTV2c?usp=sharing
 
+
+Referred Links -
+https://github.com/google/guice/wiki/AssistedInject
