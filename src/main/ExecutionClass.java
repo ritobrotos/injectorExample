@@ -2,7 +2,7 @@ package main;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import injector.AppInjector;
+import injector.AppModule;
 import service.impl.basic.ParentService;
 import java.util.List;
 import com.google.common.collect.Lists;
@@ -17,13 +17,13 @@ public class ExecutionClass {
 	}
 	
 	private static void executePassParameterExample() {
-		Injector injector = Guice.createInjector(new AppInjector());
+		Injector injector = Guice.createInjector(new AppModule());
 		CallingService service = injector.getInstance(CallingService.class);
 		service.callingMethod();
 	}
 	
 	private static void executeBasicServiceExample() {
-		Injector injector = Guice.createInjector(new AppInjector());
+		Injector injector = Guice.createInjector(new AppModule());
 		
 		ParentService service = injector.getInstance(ParentService.class);
 		service.parentMethod();
@@ -35,14 +35,14 @@ public class ExecutionClass {
 		 * instance. Most applications will call this method exactly once, in
 		 * their main() method.
 		 */
-		Injector injector = Guice.createInjector(new AppInjector());
+		Injector injector = Guice.createInjector(new AppModule());
 
 		MessageSender msgService = injector.getInstance(MessageSender.class);
 		msgService.sendMessage("fbmessage", "Meassage Body");
 	}
 	
 	private static void executeOrderServiceExample() {
-		Injector injector = Guice.createInjector(new AppInjector());
+		Injector injector = Guice.createInjector(new AppModule());
 		OrderPortal order = injector.getInstance(OrderPortal.class);
 		
 		List<String> itemList = Lists.newArrayList();
