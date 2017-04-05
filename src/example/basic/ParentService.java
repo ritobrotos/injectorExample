@@ -1,4 +1,4 @@
-package service.impl.basic;
+package example.basic;
 
 import com.google.inject.Inject;
 

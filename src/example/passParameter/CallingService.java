@@ -1,9 +1,9 @@
-package service.passParameter;
+package example.passParameter;
 
 import com.google.inject.Inject;
 
 public class CallingService {
-	
+
 	@Inject
 	private CalledServiceFactory factory;
 

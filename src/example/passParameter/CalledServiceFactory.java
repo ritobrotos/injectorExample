@@ -1,4 +1,4 @@
-package service.passParameter;
+package example.passParameter;
 
 public interface CalledServiceFactory {
 

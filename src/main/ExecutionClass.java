@@ -2,18 +2,35 @@ package main;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+
+import example.basic.ParentService;
+import example.fieldInjection.UserService;
+import example.interfaceBinding.OrderPortal;
+import example.passParameter.CallingService;
 import injector.AppModule;
-import service.impl.basic.ParentService;
+
 import java.util.List;
 import com.google.common.collect.Lists;
 import service.impl.message.MessageSender;
-import service.impl.order.OrderPortal;
-import service.passParameter.CallingService;
 
 public class ExecutionClass {
 
 	public static void main(String[] args) {
-		executePassParameterExample();
+		executeFieldInjectionExample();
+	}
+	
+	private static void executeFieldInjectionExample() {
+		Injector injector = Guice.createInjector(new AppModule());
+		UserService service = injector.getInstance(UserService.class);
+		service.getUserInfo();
+	}
+	
+	private static void executeInterfaceBindingExample() {
+		Injector injector = Guice.createInjector(new AppModule());
+		OrderPortal order = injector.getInstance(OrderPortal.class);
+		
+		List<String> itemList = Lists.newArrayList();
+		order.newOrder(itemList);
 	}
 	
 	private static void executePassParameterExample() {
@@ -40,13 +57,4 @@ public class ExecutionClass {
 		MessageSender msgService = injector.getInstance(MessageSender.class);
 		msgService.sendMessage("fbmessage", "Meassage Body");
 	}
-	
-	private static void executeOrderServiceExample() {
-		Injector injector = Guice.createInjector(new AppModule());
-		OrderPortal order = injector.getInstance(OrderPortal.class);
-		
-		List<String> itemList = Lists.newArrayList();
-		order.orderListener("new", itemList);
-	}
-	
 }

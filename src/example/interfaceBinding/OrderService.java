@@ -1,4 +1,4 @@
-package service;
+package example.interfaceBinding;
 
 import java.util.List;
 
